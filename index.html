@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coworking Space</title>
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/e70494c283.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="#Accueil">
+                <img class="logo"  src="assets/images/logo.png" alt="Workspace">
+            </a>
+            <!--navigation-->
+            <nav>
+                <a class="link1" href="#Accueil">Accueil</a>
+                <a class="link2" href="#about">A propos de </a>
+                <a class="link3" href="#gallery">Galerie </a>
+                <a class="link4" href="#prices">Prix </a>
+                <a class="link5" href="#place">Localisation </a>
+                <a class="link5" href="#contact">Contact </a>
+            </nav>
+        </header>
+
+        <!--slider-->
+        <section id="main">
+            <div class="main_slider" id="slider">
+                <img class="main_slider_img" src="assets/images/slider/coworking.jpg" alt="slide accueil" id="slide">
+                <div id="precedent" onclick="ChangeSlide(-1)"> < </div>
+                <div id="suivant" onclick="ChangeSlide(1)"> > </div>
+            </div>
+            <div class="main_text">
+                <h3 class="main_text_first text-focus-in">Bienvenue sur l'espace Business</h3>
+                <h1 class="main_text_second text-focus-in-2">Espace de coworking pour professionnel</h1>
+                <h3 class="main_text_third text-focus-in-3">Entièrement meublé, Internet ultra-rapide, salles de réunion, ...</h3>
+            </div>
+            <div class="button fade-in-bottom ">
+                <button class="button_resa" href="/">RESERVER VOTRE PLACE </button>
+                <button class="button_price" href="/">VOIR LES PRIX </button>
+            </div>
+        </section>
+
+        <!--amenities-->
+        <section id="amenities">
+            <div>
+                <h2>EQUIPEMENTS</h2>
+            </div>
+            <div class="card">
+                <div class="card_unique">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>Localisation</p>
+                </div>
+                <div class="card_unique">
+                    <i class="fas fa-wifi"></i>
+                    <p>Internet sécurisé</p>
+                </div>
+                <div class="card_unique">
+                    <i class="fas fa-users"></i>
+                    <p>Salles de réunion</p>
+                </div>
+                <div class="card_unique">
+                    <i class="fas fa-suitcase"></i>
+                    <p>Contrat court </p>
+                </div>
+                <div class="card_unique">
+                    <i class="fas fa-cloud"></i>
+                    <p>Bureau virtuel </p>
+                </div>
+                <div class="card_unique">
+                    <i class="fas fa-desktop"></i>
+                    <p>Espace bureau privé </p>
+                </div>
+            </div>
+        </section>
+
+        <!--About-->
+        <section id="about" class="about">
+            <div class="about_container">
+                <div class="about_img">
+                    <img src="assets/images/aproposde.jpg" alt="A propos de">
+                </div>
+                <div class="about_text">
+                    <div class="about_text_form">
+                        <h4>L'espace Business</h4>
+                        <p class="about_text_description">L'espace Business est situé dans l’un des centres de bureaux et d’établissements commerciaux les plus facilement accessibles et les plus importants de la ville. Situé en plein cœur de la capitale du Kerala, ce bâtiment se trouve à quelques minutes en voiture de l'aéroport international. Réparti sur 1 300 pieds carrés, l'espace Business comprend un salon simple, un bel espace de travail d'entreprise qui peut aider votre entreprise à se développer. </p>
+                        <p class="about_text_description">Nos espaces sont conçus pour favoriser la productivité, que vous soyez une équipe de 1 ou 10 personnes, et la flexibilité d'un mois à l'autre signifie que votre espace est aussi animé que vous. Si vous recherchez un espace de bureau bien connecté et abordable, choisissez l'espace entreprise.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- gallery-->
+        <section id="gallery">
+            <div>
+                <h2>Galerie Photos</h2>
+            </div>
+            <div id="filters">
+                <button  id="all">Tous</button>
+                <button  id="reception">Réception </button>
+                <button  id="conference">Conférence </button>
+                <button  id="bureau">Bureau</button>
+            </div>
+            <div id="filters-cards">
+                <div class="card_img active" id="bureau" data-bureau>
+                    <img src="assets/images/galerie/gallery_01.webp" alt="bureau">
+                </div>
+                <div class="card_img active" id="reception" data-reception>
+                    <img src="assets/images/galerie/gallery_02.webp" alt="conférence">
+                </div>
+                <div class="card_img active" id="reception" data-reception>
+                    <img src="assets/images/galerie/gallery_03.webp" alt="bureau">
+                </div>
+                <div class="card_img active " id="conference" data-conference>
+                    <img src="assets/images/galerie/gallery_04.webp" alt="réception">
+                </div>
+                <div class="card_img active" id="conference" data-conference>
+                    <img src="assets/images/galerie/gallery_05.webp" alt="réception">
+                </div>
+                <div class="card_img active" id="bureau" data-bureau>
+                    <img src="assets/images/galerie/gallery_06.webp" alt="conférence">
+                </div>
+            </div>
+        </section>
+
+        <!--bloc text-->
+        <section class="bloc">
+            <div class="bloc_text">
+                <div class="bloc_text_form">
+                    <div class="bloc_text_form_coworking">
+                        <h4>Espace Co-Working</h4>
+                        <p class="bloc_text_description">Pour les non-initiés, le coworking est une culture de bureau ouverte, communicative et sans barrière où l'on partage un espace de travail avec plusieurs individus et en fait plusieurs organisations. Ce concept est plus évolué en Occident. L’Inde, cependant, devient familière et marche lentement vers ces espaces partagés. </p>
+                    </div>
+                    <div class="bloc_text_form_business">
+                        <h4>Pourquoi l'espace Business?</h4>
+                        <p class="bloc_text_description">L'espace Business comprend un salon simple, un bel espace de travail d'entreprise qui peut aider votre entreprise à se développer au cœur de la capitale pour tous ceux qui recherchent un espace de bureau bien connecté et abordable.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--prices-->
+        <section id="prices">
+            <div>
+                <h2>NOS PRIX</h2>
+            </div>
+            <div class="card_prices">
+                <div class="card_prices_unique">
+                    <img src="assets/images/prix/price_01.webp" alt="Prix bureau">
+                    <p>Bureau</p>
+                    <p>30€ / mois</p>
+                </div>
+                <div class="card_prices_unique">
+                    <img src="assets/images/prix/price_02.webp" alt="Prix salle de conférence">
+                    <p>Salle de conférence</p>
+                    <p>10€ / 3 heures</p>
+                </div>
+                <div class="card_prices_unique">
+                    <img src="assets/images/prix/price_03.webp" alt="Prix bureau flexible">
+                    <p>Bureau flexible</p>
+                    <p>8€ / jour</p>
+                </div>
+            </div>
+        </section>
+
+        <!--location-->
+        <section class="place" id="place">
+            <div class="place_container">
+                <div class="place_map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d83998.77824511939!2d2.264634351246823!3d48.858938434981056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e1f06e2b70f%3A0x40b82c3688c9460!2sParis!5e0!3m2!1sfr!2sfr!4v1717502332087!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="place_text_form" >
+                    <h4>Localisation</h4>
+                    <p class="place_text_description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including</p>
+                </div>
+            </div>
+        </section>
+
+        <!--contact-->
+        <section class="contact" id="contact">
+            <div>
+                <h2>CONTACTEZ-NOUS</h2>
+            </div>
+            <div class="contact_box">
+                <div class="contact_box_form">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p> Avenue Gustave Eiffel </p>
+                    <p> 75007 Paris </p>
+                </div>
+                <div class="contact_box_form">
+                    <i class="fas fa-phone"></i>
+                    <p> 06 01 02 03 04 </p>
+                </div>
+                <div class="contact_box_form">
+                    <i class="fas fa-envelope"></i>
+                    <button class="btn-signup modal-btn"> FORMULAIRE DE CONTACT </button>
+                    <div class="bground">
+                        <div class="content">
+
+                            <!--close modal (croix)-->
+                            <span class="close"></span>
+                            <div class="modal-body">
+                                <form
+                                id ="myform"
+                                name="reserve"
+                                action="index.html"
+                                method="get"
+                                onsubmit="return validate();"
+                                >
+                                <div
+                                    class="formData" 
+                                    data-error="Veuillez entrer 2 caractères ou plus pour le champ du Prénom." data-error-visible="false"
+                                    >
+                                    <label for="first">Prénom</label><br>
+                                    <input
+                                    class="text-control"
+                                    type="text"
+                                    id="first"
+                                    name="first"
+                                    />
+                                    <br>
+                                </div>
+                    
+                                <div
+                                    class="formData"
+                                    data-error="Veuillez entrer 2 caractères ou plus pour le champ du Nom." data-error-visible="false"
+                                    >
+                                    <label for="last">Nom</label><br>
+                                    <input
+                                    class="text-control"
+                                    type="text"
+                                    id="last"
+                                    name="last"
+                                    />
+                                    <br>
+                                </div>
+                    
+                                <div
+                                    class="formData"
+                                    data-error="Veuillez entrer une adresse E-mail valide" data-error-visible="false"
+                                    >
+                                    <label for="email">E-mail</label><br>
+                                    <input
+                                    class="text-control"
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    />
+                                    <br>
+                                </div>
+
+                                <div
+                                    class="formData"
+                                    data-error="Votre message" data-error-visible="false"
+                                    >
+                                    <label for="message">Votre message</label><br>
+                                    <textarea 
+                                        class="text-message" 
+                                        name="message" 
+                                        id="message">
+                                    </textarea>
+                                    <br>
+                                </div>
+
+                                <!-- btn submit form-->
+                                <input
+                                    class="btn-submit modal-btn>"
+                                    type="submit"
+                                    value="GO !"
+                                />
+
+                                </form>
+                                <!-- validate text form -->
+                                <div class="form-validated">
+                                    <div class="form-validated__container">
+                                        <p class="form-validated__text">Merci !<br/> Votre réservation a bien été reçue.</p>
+                                        <button class="btn-submit btnclose">Fermer</button>
+                                    </div>
+                                </div>
+                            </div>                 
+                        </div>
+                    </div>       
+                </div>
+             </div>
+        </section>
+    </div>
+
+    <footer>
+        <a href="">
+            <img class="logo logo_footer"  src="assets/images/logo.png" alt="Workspace">
+        </a>
+        <div class="plan_site">
+            <a class="link1" href="#Accueil">Accueil</a>
+            <a class="link2" href="#about">A propos de </a>
+            <a class="link3" href="#gallery">Galerie </a>
+            <a class="link4" href="#prices">Prix </a>
+            <a class="link5" href="#place">Localisation </a>
+            <a class="link6" href="#contact">Contact </a>
+        </div>
+
+        <div class="plan_site">
+            <a href="/">Politique de confidentialité</a>
+            <a href="/">CGU</a>
+            <a href="/">Mentions légales</a>
+        </div>
+
+        <div class="socialnetwork">
+            <a href="https://x.com/">
+                <img class="twitter" src="assets/images/reseaux_sociaux/icons8-twitterx.svg" alt="Twitter">
+            </a>
+            <a href="https://www.facebook.com/">
+                <img class="facebook" src="assets/images/reseaux_sociaux/icons8-facebook.svg" alt="Facebook">
+            </a>
+            <a href="https://www.linkedin.com/">
+                <img class="linkedin" src="assets/images/reseaux_sociaux/icons8-linkedin.svg" alt="Linkedin">
+            </a>
+        </div>
+    </footer>
+</body>
+
+<script src="./Js/slider.js"></script>
+<script src="./Js/filters.js"></script>
+<script src="./Js/modal.js"> </script>
+
+</html>

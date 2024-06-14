@@ -1,0 +1,36 @@
+
+
+/*******************************/
+/*tablette et pc : responsives*/
+
+@mixin mobile {
+    @media screen and (min-width: map-get($breakpoints, mobil-min)){
+      @content;
+    }
+} 
+
+@mixin tablet {
+    @media screen and (min-width: map-get($breakpoints, tablet-min)){
+      @content;
+    }
+} 
+
+@mixin laptop {
+   @media screen and (min-width: map-get($breakpoints, laptop-min)){
+      @content;
+    }
+} 
+
+@mixin laptop-l {
+  @media screen and (min-width: map-get($breakpoints, laptop-l-min)){
+     @content;
+   }
+} 
+
+@mixin laptop-xl {
+  @media screen and (min-width: map-get($breakpoints, laptop-xl-min)){
+     @content;
+   }
+} 
+
+

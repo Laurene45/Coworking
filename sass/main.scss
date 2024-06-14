@@ -1,0 +1,669 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
+@import "./variables";
+@import "./bases";
+@import "./animations";
+@import "./mixins";
+@import "./modal";
+
+
+header {
+    display:flex;
+    @include tablet {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.logo {
+    @include tablet {
+        width: 170px;
+        height: 50px;
+    }
+    @include laptop-xl {
+        width: 250px;
+        height: 70px;
+    }
+}
+
+/*menu burger*/
+
+nav {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    @include mobile {
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        line-height: 0;
+    }
+    @include tablet {
+        flex-direction: row;
+    }
+
+    & a {
+        margin: 0 20px;
+        padding: 16px 10px;
+        text-decoration: none;
+        color: $text-color;
+        border-top: 3px solid transparent;
+        cursor: pointer;
+        @include tablet {
+            font-size: 1rem;
+            padding: 16px 2px;
+            margin: 0 15px;
+        }
+        @include laptop {
+            font-size: 1.2rem;
+            padding: 16px 10px;
+        }
+        @include laptop-xl {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+/*slider and text*/
+.main {
+    position: relative;
+    &_slider {
+    height: 600px;
+    width: 100%;
+    }
+    &_slider_img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.4);
+    }
+    &_text {
+        position:absolute;
+        //top:12%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        line-height: 0.5;
+        @include mobile {
+            top: 27%;
+        }
+        @include tablet {
+            top: 12%;
+        }
+
+        & h1 {
+            @include mobile  {
+                font-size: 2.4rem;
+                white-space:normal;
+                line-height: 1.3;
+            }
+            @include tablet {
+                font-size: 2.5rem;
+            }
+            @include laptop {
+                font-size: 3rem;
+            }
+        }
+        & h3 {
+            @include mobile  {
+                white-space:normal;
+                line-height: 1.3;
+            }
+
+        }
+
+    }
+}
+
+/*slider images */
+#slider {
+    position: relative;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+
+#precedent, #suivant {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+    position: absolute;
+    font-size: 50px;
+    color: rgba(220, 220, 220, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 60px 30px;
+    margin-top: 10px;
+}
+
+#precedent {
+    left: 0;
+}
+
+#suivant {
+    right: 0;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+    opacity: 1;
+}
+
+.button {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    //top: 60%;
+    @include mobile  {
+        top : 80%;
+    }
+    @include tablet {
+        top :60%;
+    }
+
+    &_resa {
+        background-color: $background-title;
+        margin-right: 25px;
+        &:hover {
+            background-color: transparent;
+            color: $background-title;
+            border: solid $background-title;
+        }
+    }
+    &_price {
+        background-color: transparent;
+        border: solid $background-title;
+        &:hover{
+            background-color:$background-title ;
+            color: $background-white ;
+        }
+    }
+}
+
+/* Amenities */
+#amenities, #gallery, #prices, #contact {
+    padding: 50px;
+}
+
+h2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    padding: 50px;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 15px;
+    margin-right: 15px;
+    &_unique {
+        background-color: $background-white;
+        text-align: center;
+        border-radius: 2px;
+        padding : 50px 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        width: 25%;
+        @include mobile {
+            width: 80%;
+        }
+        @include tablet {
+            width: 25%;
+        }
+        & p {
+            font-size: 20px;
+            font-weight: 500;
+            @include laptop-xl {
+                font-size: 30px;
+            }
+        }
+        & i {
+            @include laptop-xl {
+                width: 50px;
+            }
+        }
+    }
+    :hover {
+        background-color: $background-title;
+        & i {
+            color : $text-color-light;
+        }
+        & p { 
+            color : $text-color-light;
+        }
+    }
+}
+
+
+/* Contact */
+.contact_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    //padding: 50px;
+    max-width: 100%;
+    // margin-left: 15px;
+    // margin-right: 15px;
+    @include mobile { 
+      padding: 0;
+    }
+    @include tablet {
+        padding: 50px;
+    }
+    @include laptop-xl {
+        flex-direction: row;
+    }
+
+    &_form {
+        text-align: center;
+        border-radius: 2px;
+        padding : 50px 30px;
+        margin-bottom: 30px;
+        //width: 25%;
+        @include laptop-xl {
+            width: 25%;
+        }
+        & p {
+            font-weight: 500;
+            @include laptop {
+                font-size: 1rem;
+            }
+            @include laptop-l {
+                font-size: 1.2rem;
+            }
+            @include laptop-xl {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/* About */
+.about {
+    display:flex ;
+    height: 450px;
+    overflow: hidden;
+    @include mobile {
+        height: 860px;
+    }
+    @include laptop {
+        height: 350px;
+    }
+    &_container {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: $background-title;
+        @include mobile {
+            flex-direction: column;
+        }
+        @include laptop {
+            flex-direction: row;
+        }
+    }
+    &_img {
+        max-width: 50%;
+        @include mobile {
+            max-width: 100%;
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    &_text {
+        width: 50%;
+        background-color: $background-title;
+        color: $background-white;
+        @include mobile {
+            width: 100%;
+        }
+        &_form {
+            padding: 10px 30px;
+            text-align:justify;
+            & p {
+                @include tablet {
+                    font-size: 0.9rem;
+                }
+
+                @include laptop-xl {
+                    font-size: 1.5rem;
+                }
+            }  
+        }
+        &_description {
+            line-height: 1.5;
+        }
+    h4 {
+        
+        @include laptop {
+            font-size: 2rem;
+        }
+    }
+    } 
+}
+
+/* Gallery */
+#filters {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    & button {
+        margin-right: 10px;
+        border-radius: 5px;
+        //font-size: 1rem;
+        font-weight: 400;
+        padding: 15px;
+        border: solid $background-title;
+        color : $background-title;
+        box-shadow: none;
+        @include tablet {
+            font-size: 1rem;
+        }
+        @include laptop-xl {
+            font-size: 2rem;
+        }
+        &:hover {
+            color: $text-color-light;
+            background-color:$background-title ;
+        }
+    }
+}
+
+
+#filters-cards {
+    //padding: 50px;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-left: 15px;
+    margin-right: 15px;
+    @include mobile {
+        flex-direction: column;
+    }
+    @include laptop {
+        flex-direction: row;
+        padding : 50px;
+    }
+    & .card_img {
+        background-color: $background-white;
+        text-align: center;
+        border-radius: 2px;
+        padding : 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        width: 25%;
+        @include mobile {
+            width: 80%;
+        }
+        @include laptop {
+            width: 25%;
+        }
+        & img {
+            width: 100%;
+        }
+    }
+    & .inactive {
+        display: none;
+    }
+}
+
+
+/*bloc text*/
+.bloc {
+    display:flex ;
+    //height: 350px;
+    @include mobile {
+        height: 700px;
+    }
+    @include tablet {
+        height: 400px;
+    }
+    &_text {
+        flex-direction: row;
+        background-color: $background-title;
+        color: $background-white;
+        &_form {
+            display: flex;
+            justify-content: space-evenly;
+            max-width: 100%;
+            text-align: center;
+            padding: 30px;
+            @include mobile {
+                flex-direction: column;
+            }
+            @include laptop{
+                flex-direction: row;
+            }
+            &_coworking { 
+                width: 100%;
+                & p {
+                    @include tablet {
+                        font-size: 0.8rem;
+                    }
+                    @include laptop {
+                        font-size: 1rem;
+                        padding: 20px;
+                    }
+                    @include laptop-l {
+                        font-size: 1.2rem;
+                    }
+                    @include laptop-xl {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+            &_business{ 
+                width: 100%;
+                & p {
+                    @include tablet {
+                        font-size: 0.8rem;
+                        padding: 0;
+                    }
+                    @include laptop {
+                        font-size: 1rem;
+                        padding: 30px;
+                    }
+                    @include laptop-l {
+                        font-size: 1.2rem;
+                    }
+                    @include laptop-xl {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+        }
+        &_description {
+            line-height: 1.8;
+        }
+        h4 {
+            @include laptop {
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+/* Prices */
+.card_prices {
+    padding: 50px;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-left: 15px;
+    margin-right: 15px;
+    & img {
+        width: 100%;
+        }
+        &_unique {
+            background-color: $background-white;
+            text-align: center;
+            border-radius: 2px;
+            padding : 50px 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+            //width: 25%;
+                @include mobile {
+                    width: 80%;
+                }
+                @include tablet {
+                    width: 45%;
+                }
+                @include laptop {
+                    width: 25%;
+                }
+            &:hover {
+                background-color: $background-title; 
+                }
+            }
+    & p {
+        font-size: 20px;
+        font-weight: 500;
+        @include laptop-xl {
+            font-size: 30px;
+        }
+    }
+}
+
+/* Place */
+.place {
+    display:flex ;
+    height: 450px;
+    overflow: hidden;
+    @include mobile {
+        height: 1100px;
+    }
+    @include tablet {
+        height: 450px;
+    }
+    &_container {
+        display: flex;
+        background-color: $background-white;
+        justify-content: space-between;
+        @include mobile {
+            flex-direction: column;
+        }
+        @include tablet {
+            flex-direction: row;
+        }
+    }
+    &_map iframe {
+        @include mobile{
+            max-width: 100%;
+        }
+        @include tablet {
+            max-width: 100%;
+        }
+    }
+    &_text {
+        background-color: $background-title;
+        color: $background-white;
+        &_form {
+            padding: 40px;
+            text-align: center;
+            //width: 50%;
+            @include tablet {
+                max-width: 50%;
+                padding: 10px;
+            }
+            @include laptop {
+                width: 50%;
+                padding: 40px;
+            }
+        }       
+        &_description {
+            line-height: 2;
+            @include tablet {
+                font-size: 0.9rem;
+            }
+            @include laptop {
+                font-size: 1rem;
+            }
+            @include laptop-l {
+                font-size: 1.1rem;
+            }
+            @include laptop-xl {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+/*footer */
+footer {
+    background-color: $text-color-dark;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    //height: 300px;
+    @include mobile {
+        flex-direction: column;
+        height: 500px;
+    }
+    @include tablet {
+        flex-direction: row;
+        height: 250px;
+    }
+}
+
+.plan_site {
+    display: flex;
+    flex-direction: column;
+    @include mobile {
+        padding: 15px;
+    }
+    & a {
+        color: $text-color-light;
+        line-height: 2;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+        @include tablet {
+            font-size: 15px;
+        }
+        @include laptop-xl {
+            font-size: 1.5rem;
+        }
+    }
+}
+
+
+.twitter, .facebook, .linkedin {
+    background-color: $background-white;
+    border-radius: 5px;
+    margin-right: 20px;
+    width: 30px;
+    @include tablet {
+        width: 25px;
+    }
+    @include laptop-xl {
+        width: 50px;
+    }
+}

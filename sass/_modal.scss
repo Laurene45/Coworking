@@ -1,0 +1,184 @@
+  .modal-btn {
+    background: $background-title;
+    display: flex;
+    margin: auto;
+    color: $text-color-light;
+    padding: 0.75rem 2.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    &:hover {
+        background: $background-color;
+        color: $background-title;
+    }
+}
+
+/* Modal form */
+// background modal
+.bground {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(26, 39, 156, 0.4);
+}
+
+//modal animation
+.content {
+    margin: 5% auto;
+    width: 100%;
+    max-width: 500px;
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+    background: #232323;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    color: $text-color-light;
+    padding-top: 10px;
+}
+
+.modal-body {
+    padding: 15px 12%;
+    margin: 15px auto;
+}
+
+label {
+    font-size: 1rem;
+    display: inline-block;
+    margin-bottom: 11px;
+}
+
+input {
+    border: 0.8px solid #ccc;
+    outline: none;
+}
+
+.text-control {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 20px;
+    height: 48px;
+}
+
+.text-message {
+    margin: 0;
+    padding: 8px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 20px;
+    height: 200px;
+}
+
+  /* To understand the error scenario
+<div class="formData" data-error="le message d'erreur" data-error-visible="false"
+after : indicates that this will be displayed after */
+.formData[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.5em;
+    color: $background-valid;
+    display: block;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    text-align: right;
+    line-height: 0.3;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.formData[data-error-visible="true"]::after {
+    opacity: 1;
+}
+
+.formData[data-error-visible="true"] .text-control {
+    border: 2px solid $background-valid;
+}
+
+input[data-error]::after {
+    content: attr(data-error);
+    font-size: 0.5em;
+    color: $background-valid;
+}
+
+// close modal
+.close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 32px;
+    height: 32px;
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(0.7);
+}
+
+.close:before,
+.close:after {
+    position: absolute;
+    left: 15px;
+    content: " ";
+    height: 33px;
+    width: 3px;
+    background-color: $text-color-light;
+}
+
+.close:before {
+    transform: rotate(45deg);
+}
+
+.close:after {
+    transform: rotate(-45deg);
+}
+
+// validate form
+
+.btn-submit {
+    background: $background-valid;
+    display: block;
+    margin: 0 auto;
+    border-radius: 7px;
+    font-size: 1rem;
+    padding: 14px 82px;
+    color: $text-color-light;
+    cursor: pointer;
+    border: 0;
+}
+
+.form-validated {
+    display: none;
+    font-size: 1.5rem;
+    padding: 15px 8%;
+    margin: 15px auto;
+}
+
+.form-validated__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.form-validated__text {
+    width: 100%;
+    margin: 15rem auto;
+    text-align: center;
+    font-weight: normal;
+}
+
+// Animation modal open
+
+@keyframes modalopen {
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+    to {
+        opacity: 1;
+    }
+}
